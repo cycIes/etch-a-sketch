@@ -13,6 +13,7 @@ function createGrid(size) {
     cols.forEach(col => {
         for (let i = 0; i < size; i++) {
             let div = document.createElement("div");
+            div.style.opacity = .10;
             col.appendChild(div);
         }
     });
@@ -20,7 +21,8 @@ function createGrid(size) {
     cols.forEach(col => {
         col.addEventListener("mouseover", (event) => {
             let target = event.target;
-            target.style.backgroundColor = "blue";
+            target.style.backgroundColor = "black";
+            target.style.opacity = parseFloat(target.style.opacity) + .10;
         })
     });
 }
