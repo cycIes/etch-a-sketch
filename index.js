@@ -21,7 +21,6 @@ function createGrid(size) {
     cols.forEach(col => {
         col.addEventListener("mouseover", (event) => {
             let target = event.target;
-            target.style.backgroundColor = "black";
             target.style.opacity = parseFloat(target.style.opacity) + .10;
         })
     });
