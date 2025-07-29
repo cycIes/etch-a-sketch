@@ -1,9 +1,7 @@
 let grid = document.querySelector("#container");
 
 function createGrid(size) {
-    grid.childNodes.forEach(child => {
-        child.remove();
-    })
+    grid.replaceChildren();
 
     for (let i = 0; i < size; i++) {
         let col = document.createElement("div");
@@ -27,4 +25,12 @@ function createGrid(size) {
     });
 }
 
-createGrid(16);
+let newGrid = document.querySelector("button");
+
+newGrid.addEventListener("click", () => {
+    let size = parseInt(prompt("How many squares tall/wide would you like your grid to be?"));
+    if (size > 100) {
+        size = 100;
+    }
+    createGrid(size);
+})
